@@ -1,11 +1,3 @@
-/**
- * CineStream Production CMS Database File
- * * INSTRUCTIONS TO ADD NEW CONTENT:
- * 1. Copy an entire object block (from { down to },).
- * 2. Paste it inside the contentDatabase array.
- * 3. Update the properties. Ensure 'releaseDate' uses the YYYY-MM-DD format 
- * so the engine can automatically select the newest titles for the header slides.
- */
 
 const contentDatabase = [
     /**bollywood*/
