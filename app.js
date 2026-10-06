@@ -1,6 +1,18 @@
 
 const contentDatabase = [
     /**bollywood*/
+        {
+        id: "Alpha-2026",
+        title: "Alpha (2026)",
+        type: "movie",
+        genre: "Action / Thriller",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "5.1",
+        poster: "https://image.tmdb.org/t/p/w500/bPtRt3ajQ0EkyeQ1O6iJwAIi9Py.jpg",
+        streamUrl: "https://cinejoy.pk/watch/movie/1122030",
+        releaseDate: "2026-07-02",
+        description: "When Sita, a highly trained assassin raised in isolation as a super-soldier by a rogue commander, discovers the dark truth about her family and her stolen childhood, she teams up with her long lost sister to take down her creator and his illicit military program."
+    },
     {
         id: "bhooth-bangla-2026",
         title: "Bhooth Bangla (2026)",
