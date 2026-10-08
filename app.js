@@ -2,6 +2,18 @@
 const contentDatabase = [
     /**bollywood*/
         {
+        id: "Dhamaal-4",
+        title: "Dhamaal 4",
+        type: "movie",
+        genre: "Comedy",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "5.1",
+        poster: "https://image.tmdb.org/t/p/original/oVij5aEEE6iI4PxB4i0CgKp8h0m.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/1303331",
+        releaseDate: "2026-07-10",
+        description: "The Dhamaal crew reunites for another wild chase, this time scrambling after the legendary Treasure of Life. Along the way, they stumble through one ridiculous predicament after another"
+    },
+        {
         id: "Alpha-2026",
         title: "Alpha (2026)",
         type: "movie",
@@ -134,6 +146,18 @@ const contentDatabase = [
         description: "Shankar and Mukti's intense love story unfolds against the backdrop of Benaras, exploring surrender and transformation through an all-consuming romance that heals, hurts and changes them."
     },
     /**hollywood*/
+      {
+        id: "spider-man-2026",
+        title: "Spider-Man: Brand New Day 2026",
+        type: "movie",
+        genre: "Drama",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "8.0",
+        poster: "https://media.themoviedb.org/t/p/w600_and_h900_face/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/969681",
+        releaseDate: "",
+        description: "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see."
+    },
     {
         id: "your-faault",
         title: "Your Fault: London",
