@@ -1,6 +1,7 @@
 
 const contentDatabase = [
     /**bollywood*/
+
         {
         id: "Dhamaal-4",
         title: "Dhamaal 4",
@@ -231,6 +232,31 @@ const contentDatabase = [
         description: "Frankelda, a determined 19th-century Mexican writer, journeys into her subconscious to face the monsters she's written about. Guided by a tormented prince, she must restore the balance between fiction and reality before it's too late."
     },
     /**series*/
+
+    {
+        id: "Musafir-Cafe",
+        title: "Musafir Cafe",
+        type: "series",
+        genre: "Drama",
+        industry: "series", 
+        rating: "7.1",
+        poster: "https://media.themoviedb.org/t/p/w600_and_h900_face/1SbKjtoRKIpVQG5iYnumnfQIqhd.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt39665097",
+        releaseDate: "2026-07-24",
+        description: "Chander feels an undeniable connection with Sudha. Years later, he builds a new life in the hills with Preeti, but memories of the past linger."
+    },
+     {
+        id: "Pritam-and-Pedro",
+        title: "Pritam and Pedro",
+        type: "series",
+        genre: "Crime/Comedy",
+        industry: "series", 
+        rating: "8.3",
+        poster: "https://image.tmdb.org/t/p/w500/uA5hAexR9Xis3BzSOMKjNuYQUsj.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt28077038",
+        releaseDate: "2026-07-03",
+        description: "The dynamic between the two contrasting personalities, a seasoned cop who prefers old-school methods and a tech-savvy cop who relies on modern technology for investigations, as they navigate their partnership in solving crimes."
+    },
     {
         id: "A-Knight-of-the-Seven-Kingdoms",
         title: "A Knight of the Seven Kingdoms",
