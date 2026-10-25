@@ -1,20 +1,346 @@
-// ============================================================
-// CineStream — App Logic
-// ------------------------------------------------------------
-// Data is loaded BEFORE this file via:
-//   data/bollywood.js  → window.bollywoodDatabase
-//   data/hollywood.js  → window.hollywoodDatabase
-//   data/series.js     → window.seriesDatabase
-//
-// We merge them into one unified `contentDatabase` array here,
-// so all existing slider / search / grid logic keeps working
-// exactly as before.
-// ============================================================
 
 const contentDatabase = [
-    ...(window.bollywoodDatabase || []),
-    ...(window.hollywoodDatabase || []),
-    ...(window.seriesDatabase || [])
+    /**bollywood*/
+
+        {
+        id: "Dhamaal-4",
+        title: "Dhamaal 4",
+        type: "movie",
+        genre: "Comedy",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "5.1",
+        poster: "https://image.tmdb.org/t/p/original/oVij5aEEE6iI4PxB4i0CgKp8h0m.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/1303331",
+        releaseDate: "2026-07-10",
+        description: "The Dhamaal crew reunites for another wild chase, this time scrambling after the legendary Treasure of Life. Along the way, they stumble through one ridiculous predicament after another"
+    },
+        {
+        id: "Alpha-2026",
+        title: "Alpha (2026)",
+        type: "movie",
+        genre: "Action / Thriller",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "5.1",
+        poster: "https://image.tmdb.org/t/p/w500/bPtRt3ajQ0EkyeQ1O6iJwAIi9Py.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/1122030",
+        releaseDate: "2026-07-02",
+        description: "When Sita, a highly trained assassin raised in isolation as a super-soldier by a rogue commander, discovers the dark truth about her family and her stolen childhood, she teams up with her long lost sister to take down her creator and his illicit military program."
+    },
+    {
+        id: "bhooth-bangla-2026",
+        title: "Bhooth Bangla (2026)",
+        type: "movie",
+        genre: "Horror / Comedy",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "7.9",
+        poster: "https://m.media-amazon.com/images/M/MV5BN2Y3NjRhYmMtNWVjMy00ZmE1LWJkNGYtNDY3Y2I3NjkzOGE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt29540862",
+        releaseDate: "2026-04-10",
+        description: "A thrilling upcoming cinematic blend of horror and comedy featuring high-voltage laughter, suspense, and unexpected supernatural twists."
+    },
+    {
+        id: "Maa-Behen",
+        title: "Maa Behen",
+        type: "movie",
+        genre: "Thriller/Comedy",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "5.5",
+        poster: "https://m.media-amazon.com/images/M/MV5BZGZjMGRjN2QtZWM4Ni00NjVjLWFjZjMtMmJmNjg2ZjQ1ZmZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt33538438",
+        releaseDate: "2026-06-04",
+        description: "Rekha and her daughters Jaya and Sushma, controversial figures in their conservative neighborhood, discover a dead body in their kitchen. The struggling, squabbling mother-daughter trio must work together to cover up the crime."
+    },
+    {
+        id: "dhurandhar-therevenge-2026",
+        title: "Dhurandhar: The Revenge",
+        type: "movie",
+        genre: "Thriller/Spy",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "8.3",
+        poster: "https://m.media-amazon.com/images/M/MV5BNDhjNThiMjQtNTc0ZS00MjAxLTgyODItNDFkZjI5YjU0MDJhXkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt39139925",
+        releaseDate: "2026-03-19",
+        description: "Jaskirat Singh Rangi descends deeper into his alias as Hamza Ali Mazari, rising through Karachi's criminal hierarchy to claim the feared title \"Sher-e-Baloch\" while balancing loyalty, betrayal, and survival in a ruthless underworld."
+    },
+    {
+        id: "dhurandhar",
+        title: "Dhurandhar",
+        type: "movie",
+        genre: "Thriller/Spy",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "8.3",
+        poster: "https://m.media-amazon.com/images/M/MV5BMzJhMzQ0MGItMWIxOC00NzkwLWJkNDktYjgyZGMwN2U2ZDEwXkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt39139925",
+        releaseDate: "2025-12-05",
+        description: "A mysterious traveler slips into the heart of Karachi's underbelly and rises through its ranks with lethal precision, only to tear the notorious ISI-Underworld nexus apart from within."
+    },
+        {
+        id: "O-Romeo",
+        title: "O' Romeo",
+        type: "movie",
+        genre: "Thriller",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "5.2",
+        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtlBBJrvGWNZ81aGY0g6KQPa9_qPyAnemfjTlp621a4g&s=10",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt31969779",
+        releaseDate: "2026-2-13",
+        description: "In post-independence Mumbai, the underworld rises amidst a changing city. This gritty tale explores the criminal landscape of a bygone era, weaving through the streets and shadows of India's bustling metropolis."
+    },
+    {
+        id: "Raid 2",
+        title: "Raid 2",
+        type: "movie",
+        genre: "Thriller",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "6.2",
+        poster: "https://m.media-amazon.com/images/M/MV5BOTI4YWMzOGYtODkzYS00NTEyLWFmMzYtMzJkOGZmOWZlNThhXkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt28089700",
+        releaseDate: "2025-05-01",
+        description: "In 1989 Rajasthan, IPS officer Patnaik raids a palace but fails. After requesting a bribe, he's transferred to Bhoj, where he investigates Dada Bhai, a respected local figure. "
+    },
+    {
+        id: "saiyara",
+        title: "Saiyaara",
+        type: "movie",
+        genre: "Romance",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "6.3",
+        poster: "https://m.media-amazon.com/images/M/MV5BMTk2ZmFhYjctYWZiYy00N2IxLWEzMWItZGRiMDY4ZDQwZWFlXkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt28037987",
+        releaseDate: "2025-07-18",
+        description: "Heartbroken after being ditched at the altar, Vaani meets angry, struggling musician Krish. Her poetry ignites his songs and their passionate love. But as fame rises, her fading memories threaten to erase everything."
+    },
+    {
+        id: "Dhadak-2-2025",
+        title: "Dhadak 2 2025",
+        type: "movie",
+        genre: "Romance",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "6.8",
+        poster: "https://m.media-amazon.com/images/M/MV5BY2EzN2UxMDItZTk2NC00NDcwLTliYjktNWI4ZWJjZTQ1ZTg2XkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt13451410",
+        releaseDate: "2025-08-01",
+        description: "Targeted for his caste, a first-year student at an elite college fights off vicious bullies and lethal threats to protect his dignity and forbidden love."
+    },
+    {
+        id: "Jolly-LLB-3",
+        title: "Jolly LLB 3",
+        type: "movie",
+        genre: "Comedy",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "6.4",
+        poster: "https://m.media-amazon.com/images/M/MV5BMDQ3OTFkNzUtYjM4OC00ZGFlLTliZTEtMTNiY2U2YzVkNDg3XkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt27996020",
+        releaseDate: "2025-09-19",
+        description: "Smart-alec Jolly Mishra and jugadu Jolly Tyagi clash in Judge Tripathi's court with witty banter, wild twists, and heartfelt chaos in this ultimate courtroom comedy."
+    },
+    {
+        id: "Tere-Ishk-Mein",
+        title: "Tere Ishk Mein",
+        type: "movie",
+        genre: "Romance",
+        industry: "bollywood", // Maps to Bollywood Hits row
+        rating: "6.2",
+        poster: "https://m.media-amazon.com/images/M/MV5BODM3MGUxMjEtMzNmYi00ODYzLTk2OTYtNzcxZmE5NmRmMjkyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt28142095",
+        releaseDate: "2025-11-28",
+        description: "Shankar and Mukti's intense love story unfolds against the backdrop of Benaras, exploring surrender and transformation through an all-consuming romance that heals, hurts and changes them."
+    },
+    /**hollywood*/
+      {
+        id: "spider-man-2026",
+        title: "Spider-Man: Brand New Day 2026",
+        type: "movie",
+        genre: "Drama",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "8.0",
+        poster: "https://media.themoviedb.org/t/p/w600_and_h900_face/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/969681",
+        releaseDate: "",
+        description: "Fighting crime full-time as Spider-Man in a world that doesn't remember him—and the pressure of seeing his old friends move on without him—sparks a change in Peter Parker he may not have the power to control. But that transformation might also be the only thing that can stop a shocking new threat to the city and those he loves - a powerful villain no one can even see."
+    },
+    {
+        id: "your-faault",
+        title: "Your Fault: London",
+        type: "movie",
+        genre: "Drama",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "6.5",
+        poster: "https://m.media-amazon.com/images/M/MV5BNzI2YmMxZWItNjlhOS00ODNmLWEzYjQtYWIyNjc0ZTQwOTZlXkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt36958376",
+        releaseDate: "2026-07-17",
+        description: "A forbidden love story between 18-year-old Noah and stepbrother Nick faces challenges as they pursue different paths - him in business, her at Oxford - while dealing with new relationships and secrets."
+    },
+    {
+        id: "maternal-instinct",
+        title: "Maternal Instinct",
+        type: "movie",
+        genre: "Crime/Documentary",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "7.3",
+        poster: "https://image.pmgstatic.com/cache/resized/w663/files/images/film/posters/171/349/171349082_abhd78.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt42863533",
+        releaseDate: "2026-05-12",
+        description: "When a Texas state trooper pulled over a woman driving erratically on the highway in 2020, she claimed she had just given birth, but her story didn't add up."
+    },
+    {
+        id: "shelter",
+        title: "Shelter",
+        type: "movie",
+        genre: "Thriler",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "6.2",
+        poster: "https://m.media-amazon.com/images/M/MV5BMzI2ODY3MzQtYzllNy00YWM1LWExZTgtOGIwNjk2MmE2MmY2XkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt32357218",
+        releaseDate: "2026-01-30",
+        description: "A reclusive former government assassin finds his forced isolation shattered when a stranded supply girl triggers a lethal tracking system, forcing him to defend her against his old handler's relentless execution squads."
+    },
+    {
+        id: "Over-Your-Dead-Body",
+        title: "Over Your Dead Body",
+        type: "movie",
+        genre: "Thriler",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "6.2",
+        poster: "https://m.media-amazon.com/images/M/MV5BMWU2M2YyNTMtZGM4ZC00MDcwLWI3NmItZWM0YjIyOTEyNDZhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt34685692",
+        releaseDate: "2026-04-24",
+        description: "A dysfunctional married couple retreats to a secluded cabin to repair their relationship, but each secretly plots to murder the other."
+    },
+    {
+        id: "disclosure-day",
+        title: "Disclosure Day",
+        type: "movie",
+        genre: "Sci-Fi Epic",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "6.8",
+        poster: "https://m.media-amazon.com/images/M/MV5BMTgwNDI1ZjctYWNmMS00MTJhLTg1ZWItMzI1Yjk5NjZkYWFkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt15047880",
+        releaseDate: "2026-06-12",
+        description: "If you found out we weren't alone, if someone showed you, proved it to you, would that frighten you?"
+    },
+    {
+        id: "iam-frankelda",
+        title: "I Am Frankelda",
+        type: "movie",
+        genre: "animation/spanish",
+        industry: "hollywood", // Maps to hollywood Hits row
+        rating: "7.0",
+        poster: "https://m.media-amazon.com/images/M/MV5BNDc3OTYxOTQtYzNkMy00YzQ5LWJlM2MtZDcwYTliZThkMWM0XkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/movie/tt36639986",
+        releaseDate: "2026-06-12",
+        description: "Frankelda, a determined 19th-century Mexican writer, journeys into her subconscious to face the monsters she's written about. Guided by a tormented prince, she must restore the balance between fiction and reality before it's too late."
+    },
+    /**series*/
+
+    {
+        id: "Musafir-Cafe",
+        title: "Musafir Cafe",
+        type: "series",
+        genre: "Drama",
+        industry: "series", 
+        rating: "7.1",
+        poster: "https://media.themoviedb.org/t/p/w600_and_h900_face/1SbKjtoRKIpVQG5iYnumnfQIqhd.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt39665097",
+        releaseDate: "2026-07-24",
+        description: "Chander feels an undeniable connection with Sudha. Years later, he builds a new life in the hills with Preeti, but memories of the past linger."
+    },
+     {
+        id: "Pritam-and-Pedro",
+        title: "Pritam and Pedro",
+        type: "series",
+        genre: "Crime/Comedy",
+        industry: "series", 
+        rating: "8.3",
+        poster: "https://image.tmdb.org/t/p/w500/uA5hAexR9Xis3BzSOMKjNuYQUsj.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt28077038",
+        releaseDate: "2026-07-03",
+        description: "The dynamic between the two contrasting personalities, a seasoned cop who prefers old-school methods and a tech-savvy cop who relies on modern technology for investigations, as they navigate their partnership in solving crimes."
+    },
+    {
+        id: "A-Knight-of-the-Seven-Kingdoms",
+        title: "A Knight of the Seven Kingdoms",
+        type: "series",
+        genre: "Epic/Dark Fantasy",
+        industry: "series", 
+        rating: "8.6",
+        poster: "https://m.media-amazon.com/images/M/MV5BYzg4M2U3YWMtMWY4MS00MzFkLTk2ZWQtOThiOGYxZDEyMGQ2XkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt27497448",
+        releaseDate: "2026-04-17",
+        description: "A century before the events of 'Game of Thrones', Ser Duncan the Tall, and his squire, Egg, wander through Westeros while the Targaryen dynasty rule the Iron Throne."
+    },
+    {
+        id: "The-Boys",
+        title: "The Boys Season 1-5",
+        type: "series",
+        genre: "Satire/Dark Comedy",
+        industry: "series", 
+        rating: "8.5",
+        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMhlx0wpKRG9fPPwRh9rXEV2Bw71HNMJHi5q3Q5q3iOxj09T1AxeWRwcg&s=10",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt1190634",
+        releaseDate: "2026-04-08",
+        description: "A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers."
+    },
+    {
+        id: "Matka-King",
+        title: "Matka King",
+        type: "series",
+        genre: "Drama",
+        industry: "series", 
+        rating: "7.2",
+        poster: "https://m.media-amazon.com/images/M/MV5BNjg3ZmExNjctNGI3Yi00MWRlLWExYjMtODg5ZmE1Yjc4MTU2XkEyXkFqcGc@._V1_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt16997004",
+        releaseDate: "2026-04-17",
+        description: "An enterprising cotton trader in Mumbai starts a new gambling game called Matka, taking the city by storm and democratizing a terrain previously reserved for the rich and elite."
+    },
+    {
+        id: "gullak",
+        title: "Gullak Season 1-5",
+        type: "series",
+        genre: "Family/Comedy/Drama",
+        industry: "series", 
+        rating: "9.1",
+        poster: "https://i.pinimg.com/736x/26/33/50/263350b944e1b0c5151cc9cb95b10b47.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt10530900",
+        releaseDate: "2019-05-19",
+        description: "Set in quaint by-lanes in the heart of India, Gullak is a collection of disarming and relatable tales of the Mishra family."
+    },
+    {
+        id: "panchayat",
+        title: "Panchayat Season 1-4",
+        type: "series",
+        genre: "Satire/Drama/Comedy",
+        industry: "series", 
+        rating: "9.0",
+        poster: "https://m.media-amazon.com/images/M/MV5BNjMwYWMxNjYtY2I2NC00OWE0LTg4MmQtMmI5ZGI2NzU4ODhiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt12004706",
+        releaseDate: "2020-06-24",
+        description: "A comedy-drama, which captures the journey of an engineering graduate Abhishek, who for lack of a better job option joins as secretary of a Panchayat office in a remote village of Uttar Pradesh."
+    },
+    {
+        id: "taaza-khabar",
+        title: "Taaza Khabar",
+        type: "series",
+        genre: "Thriller",
+        industry: "series", 
+        rating: "8.0",
+        poster: "https://m.media-amazon.com/images/M/MV5BNjAzMDEzZmUtYjgzMy00NTYxLWJlODItYTMyZGI4YzdmZGY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt22014226",
+        releaseDate: "2023-01-06",
+        description: "A Sanitation worker, how he stumbles upon magical powers which leads to a riveting new ride for the man, and how it stirs his humble life."
+    },
+    {
+        id: "farzi",
+        title: "Farzi",
+        type: "series",
+        genre: "Thriller",
+        industry: "series", 
+        rating: "8.4",
+        poster: "https://m.media-amazon.com/images/M/MV5BNDY2OWMxNzgtZGQ4Ny00ODI3LTk3MTAtYjM4N2U4ZGI3ZGY1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        streamUrl: "https://streamimdb.ru/embed/tv/tt15477488",
+        releaseDate: "2023-02-05",
+        description: "Dive deep into a captivating, gritty fictionalization exploring the untold high-stakes underbelly of modern entertainment, power structures, and ambition."
+    }
 ];
 
 // --- APP RUNTIME INTERACTIVE FUNCTIONAL ENGINES ---
@@ -56,8 +382,8 @@ function initializeStreamingHub() {
 function renderHeaderSliderCarousel() {
     const track = document.getElementById('main-slider-track');
     const dotsBox = document.getElementById('slider-dots-box');
-    if (!track || !dotsBox) return;
-
+    if(!track || !dotsBox) return;
+    
     track.innerHTML = '';
     dotsBox.innerHTML = '';
     track.style.width = `${dynamicActiveSlides.length * 100}%`;
@@ -103,8 +429,8 @@ function switchSlide(index) {
     currentActiveSlideIndex = index;
     const track = document.getElementById('main-slider-track');
     const movementPercent = index * (100 / dynamicActiveSlides.length);
-    if (track) track.style.transform = `translateX(-${movementPercent}%)`;
-
+    if(track) track.style.transform = `translateX(-${movementPercent}%)`;
+    
     document.querySelectorAll('#slider-dots-box .dot').forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
     });
@@ -123,9 +449,9 @@ function renderMediaGridCollections(dataset) {
     const hollywoodGrid = document.getElementById('hollywood-render-grid');
     const seriesGrid = document.getElementById('series-render-grid');
 
-    if (bollywoodGrid) bollywoodGrid.innerHTML = '';
-    if (hollywoodGrid) hollywoodGrid.innerHTML = '';
-    if (seriesGrid) seriesGrid.innerHTML = '';
+    if(bollywoodGrid) bollywoodGrid.innerHTML = ''; 
+    if(hollywoodGrid) hollywoodGrid.innerHTML = '';
+    if(seriesGrid) seriesGrid.innerHTML = '';
 
     let counts = { bollywood: 0, hollywood: 0, series: 0 };
 
@@ -136,7 +462,7 @@ function renderMediaGridCollections(dataset) {
         card.dataset.title = item.title.toLowerCase();
         card.dataset.genre = item.genre.toLowerCase();
         card.dataset.desc = (item.description || '').toLowerCase();
-
+        
         card.innerHTML = `
             <div class="poster-wrapper">
                 <img src="${item.poster}" alt="${item.title}" loading="lazy">
@@ -153,7 +479,7 @@ function renderMediaGridCollections(dataset) {
                 <span class="card-genre">${item.genre}</span>
             </div>
         `;
-
+        
         card.addEventListener('click', () => openDetailsPanel(item.id));
 
         if (item.industry === 'bollywood' && bollywoodGrid) {
@@ -168,9 +494,9 @@ function renderMediaGridCollections(dataset) {
         }
     });
 
-    if (counts.bollywood === 0 && bollywoodGrid) bollywoodGrid.innerHTML = '<div class="empty-placeholder-msg">More Bollywood additions coming soon.</div>';
-    if (counts.hollywood === 0 && hollywoodGrid) hollywoodGrid.innerHTML = '<div class="empty-placeholder-msg">More Hollywood additions coming soon.</div>';
-    if (counts.series === 0 && seriesGrid) seriesGrid.innerHTML = '<div class="empty-placeholder-msg">More Web Series additions coming soon.</div>';
+    if(counts.bollywood === 0 && bollywoodGrid) bollywoodGrid.innerHTML = '<div class="empty-placeholder-msg">More Bollywood additions coming soon.</div>';
+    if(counts.hollywood === 0 && hollywoodGrid) hollywoodGrid.innerHTML = '<div class="empty-placeholder-msg">More Hollywood additions coming soon.</div>';
+    if(counts.series === 0 && seriesGrid) seriesGrid.innerHTML = '<div class="empty-placeholder-msg">More Web Series additions coming soon.</div>';
 }
 
 /* Modal Interface Intercept and Data Mapping Logic */
@@ -189,7 +515,7 @@ function openDetailsPanel(id) {
     playBtn.onclick = () => openCinemaScreen(item.streamUrl);
 
     const panel = document.getElementById('global-details-panel');
-    if (panel) {
+    if(panel) {
         panel.style.display = 'flex';
         setTimeout(() => panel.classList.add('active'), 10);
     }
@@ -197,7 +523,7 @@ function openDetailsPanel(id) {
 
 function closeDetailsPanel() {
     const panel = document.getElementById('global-details-panel');
-    if (panel) {
+    if(panel) {
         panel.classList.remove('active');
         setTimeout(() => panel.style.display = 'none', 400);
     }
@@ -205,16 +531,16 @@ function closeDetailsPanel() {
 
 function openCinemaScreen(url) {
     const frame = document.getElementById('cinema-frame-element');
-    if (frame) frame.src = url;
+    if(frame) frame.src = url;
     const player = document.getElementById('global-player-overlay');
-    if (player) player.classList.add('active');
+    if(player) player.classList.add('active');
 }
 
 function closeCinemaScreen() {
     const frame = document.getElementById('cinema-frame-element');
-    if (frame) frame.src = '';
+    if(frame) frame.src = ''; 
     const player = document.getElementById('global-player-overlay');
-    if (player) player.classList.remove('active');
+    if(player) player.classList.remove('active');
 }
 
 /* UI Navigation Rail Controls */
@@ -240,7 +566,7 @@ function scrollToSection(targetId, elementPointer) {
         const matchBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => {
             return btn.getAttribute('onclick').includes(targetId);
         });
-        if (matchBtn) matchBtn.classList.add('active');
+        if(matchBtn) matchBtn.classList.add('active');
     }
 
     const navbarOffset = document.getElementById('app-navigation').offsetHeight + 20;
@@ -260,11 +586,11 @@ function scrollToSection(targetId, elementPointer) {
 function setupSearchEngineListener() {
     const searchInput = document.getElementById('live-search');
     if (!searchInput) return;
-
+    
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
         const allSections = document.querySelectorAll('section.row-container');
-
+        
         if (query === '') {
             // Restore everything back to normal grid parameters
             allSections.forEach(section => {
@@ -276,14 +602,14 @@ function setupSearchEngineListener() {
                     card.style.borderColor = 'var(--border-subtle)';
                 });
             });
-
+            
             // Reset horizontal track scrolling back to start
-            document.querySelectorAll('.carousel-viewport').forEach(grid => grid.scrollLeft = 0);
+            document.querySelectorAll('.movies-grid').forEach(grid => grid.scrollLeft = 0);
 
             // Default select the Home tab
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             const homeTab = document.querySelectorAll('.tab-btn')[0];
-            if (homeTab) homeTab.classList.add('active');
+            if(homeTab) homeTab.classList.add('active');
             return;
         }
 
@@ -310,9 +636,9 @@ function setupSearchEngineListener() {
             // If a category row has at least one matching movie, keep it visible
             if (sectionHasMatch) {
                 section.style.display = 'block';
-
+                
                 // Instantly snap the layout track back to 0 so the active movie is right in front of the screen
-                const gridElement = section.querySelector('.carousel-viewport');
+                const gridElement = section.querySelector('.movies-grid');
                 if (gridElement) gridElement.scrollLeft = 0;
 
                 if (!firstMatchedSectionId) {
@@ -334,7 +660,7 @@ function resetFilters(e) {
     e.preventDefault();
     const searchInput = document.getElementById('live-search');
     if (searchInput) searchInput.value = '';
-
+    
     const allSections = document.querySelectorAll('section.row-container');
     allSections.forEach(section => {
         section.style.display = 'block';
@@ -344,12 +670,12 @@ function resetFilters(e) {
             card.style.transform = '';
             card.style.borderColor = 'var(--border-subtle)';
         });
-        const gridElement = section.querySelector('.carousel-viewport');
+        const gridElement = section.querySelector('.movies-grid');
         if (gridElement) gridElement.scrollLeft = 0;
     });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     const homeTab = document.querySelectorAll('.tab-btn')[0];
-    if (homeTab) homeTab.classList.add('active');
+    if(homeTab) homeTab.classList.add('active');
 }
